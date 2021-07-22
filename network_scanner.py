@@ -11,6 +11,7 @@ def scan(ip):
         print(element[1].psrc)
         print(element[1].hwsrc)
         print("**************************")
+        print("**************************")
 
 
 scan("10.0.2.1/24")
