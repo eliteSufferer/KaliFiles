@@ -10,8 +10,7 @@ def scan(ip):
     for element in answered_list:
         print(element[1].psrc)
         print(element[1].hwsrc)
-        print("*")
-        print("****************************")
+        print("***************************")
 
 
 scan("10.0.2.1/24")
