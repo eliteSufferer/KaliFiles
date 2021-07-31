@@ -25,5 +25,4 @@ def process_sniffed_packet(packet):
             pass
 
 
-
 sniff("eth0")
